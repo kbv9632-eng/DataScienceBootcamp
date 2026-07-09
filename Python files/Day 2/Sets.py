@@ -5,6 +5,13 @@ print(numbers_set)
 #The concept of indxing does not exist with sets 
 print(numbers_set[0]) # Type Error will come as there is no order or index
 
+#To Create a empty set 
+sample_empty_DS = {}
+print(type(sample_empty_DS)) # if notice here py recognizes sample_empty_DS as a Dict , so in order to declare an empty set you should do this :
+
+sample_empty_set = set()
+print(type(sample_empty_set))
+
 # Arithmaic Op's 
 sample_set_1 = {1,2,3,7,9}
 sample_set_2 = {4,5,6,7,8,9}
