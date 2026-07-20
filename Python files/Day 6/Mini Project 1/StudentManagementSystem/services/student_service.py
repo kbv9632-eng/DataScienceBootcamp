@@ -22,8 +22,36 @@ def add_student():
     print(students)
 #Update Student Info 
 def update_student():
-    pass
+    user_input_update = input("Enter the Student ID: ")
 
+    found = False
+
+    for student in students:
+
+        if user_input_update == student["student_id"]:
+            found = True
+
+            while True:
+                user_input_key = input(
+                    "Enter the field you would like to update: "
+                )
+
+                if user_input_key in student.keys():
+                    break
+                else:
+                    print("Field does not exist. Please try again.")
+
+            user_updated_info = input("Enter the new value: ")
+            student[user_input_key] = user_updated_info
+
+            print("Student information updated successfully!")
+            break
+
+    if not found:
+        print("Student ID not found.")
+
+                  
+        
 #Delete Student Info
 def delete_student():
     pass
