@@ -1,9 +1,25 @@
+#Imports 
+from data.database import students
 # It is responsible for all student management operations.
 
 #Add Student
 def add_student():
-    pass
+    student_id = input("Enter Student ID: ")
+    name = input("Enter name of the student :- ")
+    age = int(input('Enter the age of the student:- '))
+    gender = input("Enter the Gender of the Student:- ")
+    student_class = input('Enter Student Class:- ')
 
+    student = {
+    "student_id" : student_id,
+    "name" : name,
+    "age" : age,
+    "gender" : gender,
+    "student_class" : student_class
+    }
+    students.append(student)
+    print("Student has been added")
+    print(students)
 #Update Student Info 
 def update_student():
     pass
@@ -14,8 +30,19 @@ def delete_student():
 #View All Students
 
 def view_all_students():
-    pass
-
+    if len(students) == 0:
+         print("NO Students exist in the database")
+    else:        
+      for stud in students:        
+         print("--------------------------")
+         print(stud['student_id'])
+         print(stud['name'])
+         print(stud['age'])
+         print(stud['gender'])
+         print(stud['student_class'])
+         print("--------------------------")
+    
+    
 #Search Student
 def student_search():
     pass
