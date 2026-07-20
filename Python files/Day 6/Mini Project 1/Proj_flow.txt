@@ -1,0 +1,54 @@
+Student Management System 
+This is not a capstone project but a toy project just to implement the concepts that we have learnt and implement them in python.
+
+As of now the requirements for our project look like this :-
+
+1) The Student Management System is a console-based Python application that enables an administrator to manage student records. The application will store student information, maintain grades, and provide features to add, update, search, delete, and display students.
+2) Only one user exists.Administrator : The administrator has complete access to the system.
+3) Data to be stored : - Name ,Age , Gender , Class , Grades 
+4) The system shall allow the administrator to:
+Add Student
+View All Students
+Search Student
+Update Student Information
+Delete Student
+Update Student Grades
+Calculate Student Average
+Find Topper
+Exit Program
+
+5) Sample Sys design : Student
+│
+├── Student ID
+├── Name
+├── Age
+├── Gender
+├── Class
+└── Grades
+      ├── Math
+      ├── Science
+      └── English
+
+6) One student will be stored as a dictionary and every student will be stored as a list of dictionaries.
+7) Start
+
+↓
+
+Display Menu
+
+↓
+
+User selects an operation
+
+↓
+
+Execute requested operation
+
+↓
+
+Return to Menu
+
+↓
+
+Exit
+8)
