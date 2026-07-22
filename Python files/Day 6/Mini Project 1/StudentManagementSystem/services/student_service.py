@@ -23,19 +23,15 @@ def add_student():
 #Update Student Info 
 def update_student():
     user_input_update = input("Enter the Student ID: ")
-
     found = False
 
     for student in students:
-
         if user_input_update == student["student_id"]:
             found = True
-
             while True:
                 user_input_key = input(
                     "Enter the field you would like to update: "
                 )
-
                 if user_input_key in student.keys():
                     break
                 else:
@@ -43,7 +39,6 @@ def update_student():
 
             user_updated_info = input("Enter the new value: ")
             student[user_input_key] = user_updated_info
-
             print("Student information updated successfully!")
             break
 
@@ -54,7 +49,26 @@ def update_student():
         
 #Delete Student Info
 def delete_student():
-    pass
+    if len(students) == 0:
+        print('There are no students to delete !!!')
+        return 
+    #else:
+    while True:
+        del_input = input("Enter the id of the student:- ")
+        if del_input.strip().lower() == 'exit':
+            return 
+        
+        found = False
+        for index, student  in enumerate(students):
+            if student['student_id'] == del_input:
+                students.pop(index)
+                print('The student has been deleted !!!')
+                found = True
+                return      
+                   
+        if not found: 
+            print('Student_id not found !!!')
+
 #View All Students
 
 def view_all_students():
@@ -73,5 +87,28 @@ def view_all_students():
     
 #Search Student
 def student_search():
-    pass
+    if len(students) == 0:
+        print("DataBase is empty !!!")
+        return
+    while True:
+        view_inp = input("Enter the id of the student or enter exit to leave:- ")
+        if view_inp.strip().lower() == 'exit':
+            return 
+        
+        found = False
+
+        for student in students:
+            if student['student_id'] == view_inp:
+                print("--------------------------")
+                print(f"Student ID : {student['student_id']}")
+                print(f"Name       : {student['name']}")
+                print(f"Age        : {student['age']}")
+                print(f"Gender     : {student['gender']}")
+                print(f"Class      : {student['student_class']}")
+                print("--------------------------")
+                found = True
+                return 
+
+        if not found:
+            print('The student id does not exist pls enter the valid id or exit to leave !!!')
 
